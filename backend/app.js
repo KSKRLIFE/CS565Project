@@ -17,7 +17,12 @@ app.get("/", (req, res) => {
 app.get('/photos', async (req, res) => {
     const resp = await fetch(`${baseAPI}/photos?client_id=${access_key}`)
     const data = await resp.json()
-    console.log(data);
+    res.json(data)
+})
+
+app.get('/photos/:id', async (req, res) => {
+    const resp = await fetch(`${baseAPI}/photos/${req.params.id}?client_id=${access_key}`)
+    const data = await resp.json()
     res.json(data)
 })
 
