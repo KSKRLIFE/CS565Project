@@ -1,6 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const fetch = require("node-fetch");
+const cors = require('cors');
 const router = require("./routes/api/routes");
 const app = express();
 app.use(express.json());
@@ -10,6 +11,10 @@ app.use(cookieParser());
 app.get("/", (req, res) => {
     res.send('HI')
 });
+
+app.use(cors({
+    origin: '*'
+}));
 
 app.use('/api', router)
 
