@@ -4,7 +4,7 @@ import './App.css';
 import MainView from './Containers/MainView/MainView';
 import BottomBar from './Components/BottomBar/BottomBar.js';
 import DetailPhoto from './Components/DetailPhoto/DetailPhoto';
-
+import Search from './Containers/Search/Search';
 function App() {
   let style = {
     marginBottom: `${navigator.userAgent.match('CriOS')&&`86px`}`
@@ -16,6 +16,7 @@ function App() {
           <section style={style} className='scroller'>
             <Route path="/" exact component={MainView} />
             <Route path="/photo/:id" exact component={DetailPhoto} />
+            <Route path="/search/" exact component={Search} />
           </section>
           
         </div>
