@@ -43,7 +43,7 @@ router.get("/random", async (req, res) => {
     } = req.query
 
     try {
-        let url = `${baseAPI}/photos/random?client_id=${access_key}&`
+        let url = `${baseAPI}/photos/random`
         if (collections) {
             url = `${url}collections=${collections}&`
         }
