@@ -1,4 +1,4 @@
-const {validOrder, validOrientations} = require("../const")
+const {validOrder,validOrderTopics, validOrientations} = require("../const")
 
 const checkValidOrderBy = (query) => {
     return validOrder.includes(query)
@@ -7,7 +7,11 @@ const checkValidOrderBy = (query) => {
 const checkValidOrientation = (query) => {
     return validOrientations.includes(query)
 }
+const checkValidOrderByTopics = (query) => {
+    return validOrderTopics.includes(query)
+}
 module.exports = {
     checkValidOrderBy,
-    checkValidOrientation
+    checkValidOrientation,
+    checkValidOrderByTopics
 }

@@ -7,5 +7,6 @@ const collectionsApi = require("./collections.api");
 router.use("/photos", photosApi);
 router.use("/search", searchApi);
 router.use("/collections", collectionsApi);
+router.use("/topics", collectionsApi);
 
 module.exports = router;
