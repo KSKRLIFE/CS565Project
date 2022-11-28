@@ -85,4 +85,28 @@ router.get("/:id/photos", async (req, res) => {
 });
 
 
+router.get("/:id/related", async (req, res) => {
+    const {
+        id
+    } = req.params
+    if (!id) {
+        res.end('error: No id provided')
+    }
+    try {
+        const url = `${baseAPI}/collections/${id}/related`
+        const resp = await fetch(url, {
+            headers: {
+                Authorization: `Client-ID ${access_key}`
+            }
+        })
+        const data = await resp.json()
+        res.json(data)
+    } catch (e) {
+        console.log('error', e)
+        res.send('error')
+    }
+
+});
+
+
 module.exports = router;
