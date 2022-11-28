@@ -2,7 +2,7 @@ const express = require("express");
 const fetch = require("node-fetch");
 const {checkValidOrientation, checkValidOrderBy} = require("../utilities");
 const router = express.Router();
-import {access_key, baseAPI} from "../../const";
+const {access_key, baseAPI}= require ("../../const");
 
 router.get("/", async (req, res) => {
     const {

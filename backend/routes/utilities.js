@@ -1,9 +1,13 @@
-import {validOrder, validOrientations} from "../const";
+const {validOrder, validOrientations} = require("../const")
 
-export const checkValidOrderBy = (query) => {
+const checkValidOrderBy = (query) => {
     return validOrder.includes(query)
 }
 
-export const checkValidOrientation = (query) => {
+const checkValidOrientation = (query) => {
     return validOrientations.includes(query)
+}
+module.exports = {
+    checkValidOrderBy,
+    checkValidOrientation
 }
