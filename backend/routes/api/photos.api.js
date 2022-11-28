@@ -2,7 +2,7 @@ const express = require("express");
 const fetch = require("node-fetch");
 const {checkValidOrientation, checkValidOrderBy} = require("../utilities");
 const router = express.Router();
-const {access_key, baseAPI}= require ("../../const");
+const {access_key, baseAPI} = require("../../const");
 
 router.get("/", async (req, res) => {
     const {
@@ -15,8 +15,12 @@ router.get("/", async (req, res) => {
         res.send('error')
     } else {
         try {
-            const url = `${baseAPI}/photos?client_id=${access_key}&page=${page}&per_page=${per_page}&order_by=${order_by}`
-            const resp = await fetch(url)
+            const url = `${baseAPI}/photos?page=${page}&per_page=${per_page}&order_by=${order_by}`
+            const resp = await fetch(url, {
+                headers: {
+                    Authorization: `Client-ID ${access_key}`
+                }
+            })
             const data = await resp.json()
             res.json(data)
         } catch (e) {
@@ -63,7 +67,11 @@ router.get("/random", async (req, res) => {
             url = `${url}count=${count}&`
         }
         console.log(url);
-        const resp = await fetch(url)
+        const resp = await fetch(url, {
+                headers: {
+                    Authorization: `Client-ID ${access_key}`
+                }
+            })
         const data = await resp.json()
         res.json(data)
     } catch (e) {
@@ -76,7 +84,11 @@ router.get("/:id", async (req, res) => {
     const {id} = req.params
     try {
         const url = `${baseAPI}/photos/${id}?client_id=${access_key}`
-        const resp = await fetch(url)
+        const resp = await fetch(url, {
+                headers: {
+                    Authorization: `Client-ID ${access_key}`
+                }
+            })
         const data = await resp.json()
         res.json(data)
     } catch (e) {
@@ -88,15 +100,19 @@ router.get("/:id", async (req, res) => {
 router.get("/:id/statistics", async (req, res) => {
     const {
         id,
-        resolution='days',
-        quantity=30
+        resolution = 'days',
+        quantity = 30
     } = req.query
     if (!id) {
         res.end('error : id is required for statistics')
     }
     try {
         let url = `${baseAPI}/photos/${id}/statistics?client_id=${access_key}`
-        const resp = await fetch(url)
+        const resp = await fetch(url, {
+                headers: {
+                    Authorization: `Client-ID ${access_key}`
+                }
+            })
         const data = await resp.json()
         res.json(data)
     } catch (e) {
