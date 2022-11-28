@@ -4,7 +4,8 @@
   "description": "backend server for cs565 final project",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js localhost 8080"
+    "start": "nodemon app.js localhost 8080",
+    "publishToHeroku": "cd ../ && git subtree push --prefix backend cs565-backend BE_topicsApi || true"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
