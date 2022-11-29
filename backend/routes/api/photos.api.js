@@ -7,7 +7,7 @@ const {access_key, baseAPI} = require("../../const");
 router.get("/", async (req, res) => {
     const {
         page = 1,
-        per_page = 10,
+        per_page = 21,
         order_by = 'latest'
     } = req.query
 

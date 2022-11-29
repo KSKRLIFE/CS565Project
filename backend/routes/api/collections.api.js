@@ -7,7 +7,7 @@ const {checkValidOrientation} = require("../utilities");
 router.get("/", async (req, res) => {
     const {
         page = 1,
-        per_page = 10,
+        per_page = 12,
     } = req.query
 
     try {
@@ -58,7 +58,7 @@ router.get("/:id/photos", async (req, res) => {
     } = req.params
     const {
         page = 1,
-        per_page = 10,
+        per_page = 12,
         orientation
     } = req.query
 

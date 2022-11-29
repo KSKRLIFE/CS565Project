@@ -11,5 +11,6 @@ module.exports = {
     access_key,
     client_secret,
     validOrder,
-    validOrientations
+    validOrientations,
+    validOrderTopics
 }
