@@ -1,6 +1,7 @@
 const baseAPI = 'https://api.unsplash.com'
-const access_key = '2b49bba071a9f09d53cc8811ff6e1a137e230063abf92aebc473ae1ce7f3239b'
-const client_secret = 'c497c84fe84713d394f750394541078580edde481bcaf41a77b8280544a338c3'
+const oauthURL = 'https://unsplash.com/oauth/token'
+const access_key = 'NNAw7QdXUViq-LNrYe-i0mJiqiq3RBavlpHDoMpoYo4'
+const client_secret = 'B_onOq3-_n0pTmS5Mvo2NYcaBDu5dmR90VSpXwNehGs'
 
 const validOrder = ['latest', 'oldest', 'popular']
 const validOrderTopics = ['latest', 'oldest', 'position', 'featured']
@@ -12,5 +13,6 @@ module.exports = {
     client_secret,
     validOrder,
     validOrientations,
-    validOrderTopics
+    validOrderTopics,
+    oauthURL
 }
