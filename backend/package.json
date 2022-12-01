@@ -4,13 +4,15 @@
   "description": "backend server for cs565 final project",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js localhost 8080"
+    "start": "nodemon app.js localhost 8080",
+    "publishToHeroku": "cd ../ && git subtree push --prefix backend cs565-backend BE_topicsApi || true"
   },
   "dependencies": {
-    "node-fetch": "2.6.7",
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
-    "express": "~4.16.1"
+    "express": "~4.16.1",
+    "node-fetch": "2.6.7"
   },
   "devDependencies": {
     "nodemon": "1.18.4"
