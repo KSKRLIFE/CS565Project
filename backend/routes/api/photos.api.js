@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     } = req.query
 
     if (!checkValidOrderBy(order_by)) {
-        res.send('error')
+        res.end('error no valid order')
     } else {
         try {
             const url = `${baseAPI}/photos?page=${page}&per_page=${per_page}&order_by=${order_by}`
@@ -68,10 +68,10 @@ router.get("/random", async (req, res) => {
         }
         console.log(url);
         const resp = await fetch(url, {
-                headers: {
-                    Authorization: `Client-ID ${access_key}`
-                }
-            })
+            headers: {
+                Authorization: `Client-ID ${access_key}`
+            }
+        })
         const data = await resp.json()
         res.json(data)
     } catch (e) {
@@ -85,10 +85,29 @@ router.get("/:id", async (req, res) => {
     try {
         const url = `${baseAPI}/photos/${id}?client_id=${access_key}`
         const resp = await fetch(url, {
-                headers: {
-                    Authorization: `Client-ID ${access_key}`
-                }
-            })
+            headers: {
+                Authorization: `Client-ID ${access_key}`
+            }
+        })
+        const data = await resp.json()
+        res.json(data)
+    } catch (e) {
+        console.log('error', e)
+        res.send('error')
+    }
+})
+
+router.get("/:id/like", async (req, res) => {
+    const {id} = req.params
+    const {token} = req.query
+    try {
+        const url = `${baseAPI}/photos/${id}/like`
+        const resp = await fetch(url, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            method:'POST'
+        })
         const data = await resp.json()
         res.json(data)
     } catch (e) {
@@ -109,10 +128,10 @@ router.get("/:id/statistics", async (req, res) => {
     try {
         let url = `${baseAPI}/photos/${id}/statistics?client_id=${access_key}`
         const resp = await fetch(url, {
-                headers: {
-                    Authorization: `Client-ID ${access_key}`
-                }
-            })
+            headers: {
+                Authorization: `Client-ID ${access_key}`
+            }
+        })
         const data = await resp.json()
         res.json(data)
     } catch (e) {
