@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-    res.send('HI')
+    res.send('backend is up and running')
 });
 
 app.use(cors({
