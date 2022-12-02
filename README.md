@@ -3,8 +3,8 @@
 [**Video Link**](https://media.pdx.edu/media/t/1_9w4s0480 "Link")
 
 ## Team
-Sarvesh Biradar (sbiradar@pdx.edu)
-Saylee Jagtap (sjagtap@pdx.edu)
+Sarvesh Biradar (sbiradar@pdx.edu)  
+Saylee Jagtap (sjagtap@pdx.edu)  
 Sai Kishore Raju Konduru (konduru@pdx.edu)
 
 ## Stack
