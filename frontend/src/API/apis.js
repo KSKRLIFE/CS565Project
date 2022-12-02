@@ -17,3 +17,19 @@ export async function getTopicPhotos(topic){
 	})
 		.then((data) => data.json());
 }
+
+
+export async function getCollections() {
+	return await fetch(`${baseAPI}/collections/?client_id=${client_id}`)
+		.then((data) => data.json());
+};
+
+export async function getCollectionPhotos(id) {
+	return await fetch(`${baseAPI}/collections/${id}/photos?client_id=${client_id}`)
+		.then((data) => data.json());
+};
+
+export async function getDetailCollection(id) {
+	return await fetch(`${baseAPI}/collections/${id}?client_id=${client_id}`)
+		.then((data) => data.json());
+};
