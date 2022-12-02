@@ -8,6 +8,9 @@ import Search from './Containers/Search/Search';
 import Collections from './Containers/Collections/Collections';
 import DetailCollection from './Components/DetailCollection/DetailCollection';
 import UserProfile from './Containers/UserProfile/UserProfile';
+import Login from "./Containers/Login/Login";
+import Oauth from "./Containers/Login/Oauth";
+import MyProfile from "./Containers/UserProfile/myProfile";
 function App() {
   let style = {
     marginBottom: `${navigator.userAgent.match('CriOS')&&`86px`}`
@@ -23,6 +26,9 @@ function App() {
             <Route path="/collections/" exact component={Collections} />
             <Route path="/collection/:id" exact component={DetailCollection} />
             <Route path="/user/:userName" exact component={UserProfile} />
+            <Route path="/profile" exact component={MyProfile} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/oauth" component={Oauth} />
           </section>
           
         </div>
