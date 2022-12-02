@@ -19,13 +19,14 @@ export async function getTopicPhotos(topic,page=1){
 }
 
 
-export async function getCollections() {
-	return await fetch(`${baseAPI}/collections/?client_id=${client_id}`)
+
+export async function getCollections(page=1) {
+	return await fetch(`${baseAPI}/collections/?client_id=${client_id}&page=${page}`)
 		.then((data) => data.json());
 };
 
-export async function getCollectionPhotos(id) {
-	return await fetch(`${baseAPI}/collections/${id}/photos?client_id=${client_id}`)
+export async function getCollectionPhotos(id,page) {
+	return await fetch(`${baseAPI}/collections/${id}/photos?client_id=${client_id}&page=${page}`)
 		.then((data) => data.json());
 };
 
