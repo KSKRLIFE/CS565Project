@@ -9,8 +9,8 @@ export async function getTopicsList(){
 		.then((data) => data.json());
 }
 
-export async function getTopicPhotos(topic){
-	return await fetch(`${baseAPI}/topics/${topic}/photos/?client_id=${client_id}`,{
+export async function getTopicPhotos(topic,page=1){
+	return await fetch(`${baseAPI}/topics/${topic}/photos/?page=${page}`,{
 		headers:{
 			'ngrok-skip-browser-warning':'true'
 		}
