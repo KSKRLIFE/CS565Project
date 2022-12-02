@@ -7,6 +7,7 @@ import DetailPhoto from './Components/DetailPhoto/DetailPhoto';
 import Search from './Containers/Search/Search';
 import Collections from './Containers/Collections/Collections';
 import DetailCollection from './Components/DetailCollection/DetailCollection';
+import UserProfile from './Containers/UserProfile/UserProfile';
 function App() {
   let style = {
     marginBottom: `${navigator.userAgent.match('CriOS')&&`86px`}`
@@ -21,6 +22,7 @@ function App() {
             <Route path="/search/" exact component={Search} />
             <Route path="/collections/" exact component={Collections} />
             <Route path="/collection/:id" exact component={DetailCollection} />
+            <Route path="/user/:userName" exact component={UserProfile} />
           </section>
           
         </div>
