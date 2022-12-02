@@ -34,3 +34,11 @@ export async function getDetailCollection(id) {
 	return await fetch(`${baseAPI}/collections/${id}?client_id=${client_id}`)
 		.then((data) => data.json());
 };
+export async function getUser(username){
+	return await fetch(`${baseAPI}/users/${username}/?client_id=${client_id}`)
+		.then((data) => data.json());
+};
+export async function getUsersPhotos(username,activity){
+	return await fetch(`${baseAPI}/users/${username}/${activity}/?client_id=${client_id}`)
+		.then((data) => data.json());
+};
